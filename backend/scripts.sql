@@ -1,4 +1,4 @@
-CREATE DATABASE 'gestion_sesiones';
+--CREATE DATABASE 'gestion_sesiones';
 
 CREATE TABLE estudiantes(
     id SERIAL PRIMARY KEY,
