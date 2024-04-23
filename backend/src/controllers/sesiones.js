@@ -2,7 +2,7 @@ const {pool} = require('../database/db')
 
 
 const getSesiones = async (req, res) =>{
-    const response = await pool.query('SELECT * FROM sesiones;');
+    const response = await pool.query("SELECT id, nombre, start_datetime, end_datetime, cupo FROM sesiones;");
     res.json(response.rows);
 };
 
