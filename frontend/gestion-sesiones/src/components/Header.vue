@@ -1,5 +1,17 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
+
+export default{
+    components:{
+        RouterLink
+    },
+    name: 'Header',
+    data() {
+        return {
+            ventana: 1
+        }
+    },
+}
 </script>
 
 <template>

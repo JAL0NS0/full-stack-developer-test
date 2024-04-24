@@ -7,19 +7,47 @@
              "cupo":10
           }
        ],
-       "Electronica IV":[
+       "Electronica XX":[
           {
-             "fecha_inicio":"16/04/2024 18:00",
-             "fecha_fin":"16/04/2024 19:00",
+             "fecha_inicio":"11/04/2024 18:00",
+             "fecha_fin":"11/04/2024 19:00",
              "cupo":20
           }
        ],
-       "Matematica III":[
+       "Electronica IV":[
           {
-             "fecha_inicio":"16/04/2024 11:00",
-             "fecha_fin":"16/04/2024 13:00",
+             "fecha_inicio":"17/04/2024 18:00",
+             "fecha_fin":"17/04/2024 19:00",
+             "cupo":20
+          }
+       ],
+       "Matematica II":[
+          {
+             "fecha_inicio":"19/04/2024 11:00",
+             "fecha_fin":"19/04/2024 13:00",
              "cupo":15
           }
-       ]
+       ],
+       "Fisica II":[
+         {
+            "fecha_inicio":"15/04/2024 8:00",
+            "fecha_fin":"15/04/2024 10:00",
+            "cupo":10
+         }
+      ],
+      "Electronica I":[
+         {
+            "fecha_inicio":"20/04/2024 18:00",
+            "fecha_fin":"20/04/2024 19:00",
+            "cupo":20
+         }
+      ],
+      "Matematica III":[
+         {
+            "fecha_inicio":"11/04/2024 11:00",
+            "fecha_fin":"11/04/2024 13:00",
+            "cupo":15
+         }
+      ]
     }
  }
