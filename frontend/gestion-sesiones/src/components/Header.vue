@@ -20,10 +20,10 @@ export default{
         <img id="img-footer" alt="logo-footer" class="img-footer" src="https://www.galileo.edu/wp-content/themes/galileo-theme/img/logo-footer.png">
         <span class="fs-4 text-white">Gestión de sesiones</span>
     </a>
-
-    <ul class="nav nav-pills">
-        <li class="nav-item"><RouterLink to="/" class="nav-link active">Sesiones</RouterLink></li>
-        <li class="nav-item"><RouterLink to="/estudiantes" class="nav-link">Estudiantes</RouterLink></li>
+    
+    <ul class="fs-4 nav nav-underline">
+        <li class="nav-item" @click="ventana=1"><RouterLink to="/" class="nav-link text-white" :class="{'active': ventana==1}">Sesiones</RouterLink></li>
+        <li class="nav-item" @click="ventana=2"><RouterLink to="/estudiantes" class="nav-link text-white" :class="{'active': ventana == 2}">Estudiantes</RouterLink></li>
     </ul>
 </header>
 
