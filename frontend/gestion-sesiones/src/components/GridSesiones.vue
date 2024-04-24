@@ -11,9 +11,11 @@
 </script>
 <template>
     <div class="container">
-        <div class="d-flex justify-content-around flex-wrap">
+        <div class="d-flex justify-content-center flex-wrap">
             <div v-for="sesion in sesiones" :key="sesion.id">
-                <card-sesion v-bind:sesion="sesion"></card-sesion>
+                <RouterLink :to="{ name: 'sesion', params: { id: sesion.id }}">
+                    <card-sesion v-bind:sesion="sesion"></card-sesion>
+                </RouterLink>
             </div>
         </div>
     </div>

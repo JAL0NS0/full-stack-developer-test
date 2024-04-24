@@ -21,7 +21,7 @@ export default {
         }
     },
     created() {
-        axios.get('http://localhost:4000/sesiones')
+        axios.get(import.meta.env.VITE_URL_API+'/sesiones')
         .then((response) => {
             this.sesiones = response.data;
             this.valido = true;

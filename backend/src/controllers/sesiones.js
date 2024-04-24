@@ -9,7 +9,11 @@ const getSesiones = async (req, res) =>{
 const getSesionById = async (req, res) =>{
     const id = req.params.id;
     const response = await pool.query('SELECT * FROM sesiones WHERE id=$1;', [id]);
-    res.json(response.rows);
+    if(response.rowCount ==1 ){
+        res.json(response.rows[0]);
+    }else{
+        res.status(404).json({});
+    }
 }
 
 module.exports = {

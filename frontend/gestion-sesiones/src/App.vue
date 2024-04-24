@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import Header from './components/Header.vue'
 
 export default{
-  components: {RouterLink, RouterView, Header}
+  components: {RouterLink, RouterView, Header},
 }
 </script>
 

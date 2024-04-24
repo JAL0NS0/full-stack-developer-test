@@ -1,6 +1,6 @@
 <template>
-    <table class="table">
-        <thead>
+    <table class="table table-striped">
+        <thead class="table-dark">
             <tr>
             <th scope="col">id</th>
             <th scope="col">Name</th>
@@ -15,6 +15,7 @@
             </tr>
         </tbody>
     </table>
+    
 </template>
 
 <script>

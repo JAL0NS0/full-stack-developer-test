@@ -1,5 +1,5 @@
 const app = require('./app');
 
 //Iniciar servidor
-app.listen(4000);
-console.log('Servidor en puerto 4000');
+const PORT = 5000
+app.listen(PORT, () => console.log(`Servidor funcionando en: http://localhost:${PORT}`));
