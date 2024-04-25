@@ -17,10 +17,14 @@ export default {
     data() {
         return {
             sesiones: [],
-            valido: false
+            valido: false,
+            guardado: false
         }
     },
     created() {
+        if(this.$route.params.id == 1){
+            this.guardado=true
+        }
         axios.get(import.meta.env.VITE_URL_API+'/sesiones')
         .then((response) => {
             this.sesiones = response.data;
