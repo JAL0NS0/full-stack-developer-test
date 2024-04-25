@@ -1,7 +1,3 @@
-Perfecto, aquí está el resumen actualizado para el archivo README del frontend:
-
----
-
 # Frontend de la Aplicación de Gestión de Sesiones Universitarias
 
 Este es el frontend de la aplicación de gestión de sesiones universitarias, desarrollado utilizando Vue.js 3. La aplicación, llamada "gestion-sesiones", permite a los usuarios ver sesiones de clases disponibles, seleccionar sesiones para participar y realizar operaciones de mantenimiento en las asignaciones.
