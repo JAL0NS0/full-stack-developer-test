@@ -74,13 +74,15 @@
                     </template>
                     <!-- Se imprimen las fechas restantes -->
                     <template v-else>
-                    <div class="carousel-item">
-                        <div class="card-wrapper container-sm d-flex   justify-content-center">
-                            <div v-for="index in (fechas.length-subgrupo*5)" :key="index">
-                                <CardFecha :fecha="new Date(fechas[subgrupo*5+index-1]+'T00:00:00')"  :activo="(subgrupo*5+index-1)==activo"  @click="$emit('cambioFecha', fechas[subgrupo*5+index-1]),activar(subgrupo*5+index-1)"></CardFecha>
+                        <template v-if="(fechas.length-subgrupo*5) != 0">
+                        <div class="carousel-item">
+                            <div class="card-wrapper container-sm d-flex   justify-content-center">
+                                <div  v-for="index in (fechas.length-subgrupo*5)" :key="index">
+                                    <CardFecha :fecha="new Date(fechas[subgrupo*5+index-1]+'T00:00:00')"  :activo="(subgrupo*5+index-1)==activo"  @click="$emit('cambioFecha', fechas[subgrupo*5+index-1]),activar(subgrupo*5+index-1)"></CardFecha>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        </template>
                     </template>
                 </div>                    
                 </template>
