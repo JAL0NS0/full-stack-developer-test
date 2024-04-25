@@ -30,4 +30,4 @@ const insertar = async (sesiones)=>{
     }
 }
 
-//cargarDatos();
+cargarDatos();

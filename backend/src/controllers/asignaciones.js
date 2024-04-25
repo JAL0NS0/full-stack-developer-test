@@ -57,6 +57,14 @@ const createAsignancion = async (req, res) =>{
               }
         })
     }
+    if(existe_sesion.rows[0].disponible <= 0){
+        return res.status(409).json({
+            error: {
+                message: "Sesion sin cupo",
+                details: "La sesion ya ha llegado al maximo de cupo"
+              }
+        })
+    }
 
     //Validar que no se repita
     //Existe Asignacion
@@ -96,7 +104,8 @@ const createAsignancion = async (req, res) =>{
     }
 
     //Todo esta seguro para hacer la asignacion
-    const response = await pool.query('INSERT INTO asignaciones (id_estudiante, id_sesion) VALUES ($1, $2);', [id_estudiante, id_sesion]);
+    await pool.query('UPDATE sesiones SET disponible = disponible+1 WHERE id=$1',[id_sesion])
+    await pool.query('INSERT INTO asignaciones (id_estudiante, id_sesion) VALUES ($1, $2);', [id_estudiante, id_sesion]);
     return res.json({
         message: "Asignacion Creada",
         body: {
