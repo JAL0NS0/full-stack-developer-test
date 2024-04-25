@@ -14,9 +14,3 @@ export default{
   </div>
 </template>
 
-<style scoped>
-  .contenido{
-    width: 90%;
-    margin: auto;
-  }
-</style>

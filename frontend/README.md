@@ -1,37 +1,39 @@
-# Front-end
+Perfecto, aquí está el resumen actualizado para el archivo README del frontend:
 
-# gestion-sesiones
+---
 
-This template should help get you started developing with Vue 3 in Vite.
+# Frontend de la Aplicación de Gestión de Sesiones Universitarias
 
-## Recommended IDE Setup
+Este es el frontend de la aplicación de gestión de sesiones universitarias, desarrollado utilizando Vue.js 3. La aplicación, llamada "gestion-sesiones", permite a los usuarios ver sesiones de clases disponibles, seleccionar sesiones para participar y realizar operaciones de mantenimiento en las asignaciones.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Características
 
-## Customize configuration
+- Interfaz de usuario intuitiva para ver sesiones disponibles y realizar asignaciones.
+- Utiliza Vue.js 3 para un desarrollo rápido y estructurado de la aplicación.
+- Integración con la API RESTful del backend para obtener datos de sesiones y realizar operaciones CRUD en asignaciones.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Instalación y Uso
 
-## Project Setup
+1. Clona este repositorio.
+2. Navega hasta el directorio del proyecto: `cd gestion-sesiones`.
+3. Instala las dependencias: `npm install`.
+4. Inicia el servidor de desarrollo: `npm run serve`.
+5. Abre tu navegador y ve a `http://localhost:8080` para ver la aplicación en funcionamiento.
 
-```sh
-npm install
-```
+## Estructura del Proyecto
 
-### Compile and Hot-Reload for Development
+- `/src`: Contiene todos los archivos fuente de la aplicación.
+  - `/components`: Componentes reutilizables de Vue.js.
+  - `/views`: Vistas de las páginas de la aplicación.
+  - `/api`: Archivos de configuración y funciones para interactuar con la API RESTful del backend.
+  - `/assets`: Archivos estáticos como imágenes y estilos CSS.
 
-```sh
-npm run dev
-```
+## Resultado Final
+### Pagina Inicio
+![Diseño aplicacion web](https://raw.githubusercontent.com/JAL0NS0/full-stack-developer-test/main/design/FrontEnd.PNG)
 
-### Compile and Minify for Production
+### Pagina Asignacion de Sesiones
+![Diseño aplicacion web](https://raw.githubusercontent.com/JAL0NS0/full-stack-developer-test/main/design/FrontEndAsignacion.PNG)
 
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+### Pagina Estudiantes
+![Diseño aplicacion web](https://raw.githubusercontent.com/JAL0NS0/full-stack-developer-test/main/design/FrontEndEstudiantes.PNG)
