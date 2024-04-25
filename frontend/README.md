@@ -15,8 +15,9 @@ Este es el frontend de la aplicación de gestión de sesiones universitarias, de
 1. Clona este repositorio.
 2. Navega hasta el directorio del proyecto: `cd gestion-sesiones`.
 3. Instala las dependencias: `npm install`.
-4. Inicia el servidor de desarrollo: `npm run serve`.
-5. Abre tu navegador y ve a `http://localhost:8080` para ver la aplicación en funcionamiento.
+4. Coloca la dirección del servidor en el archivo `.env`
+5. Inicia el servidor de desarrollo: `npm run serve`.
+6. Abre tu navegador y ve a `http://localhost:8080` para ver la aplicación en funcionamiento.
 
 ## Estructura del Proyecto
 
