@@ -5,22 +5,25 @@
                 <button-back></button-back>
             </div>
         </div>
-        <h1>Sesion {{ $route.params.id }}</h1>
-        <h2>{{ sesion.nombre }}</h2>
+        <div class="row">
+            <div class="col justify-content-center d-flex">
+                <asignacion :sesion="sesion"></asignacion>
+            </div>
+        </div>
     </div>
 
 </template>
 <script>
 import ButtonBack from '@/components/ButtonBack.vue';
-import ContenedorSesiones from '../components/ContenedorSesiones.vue';
 import axios from 'axios';
 import { RouterLink, RouterView } from 'vue-router'
+import Asignacion from '../components/Asignacion.vue';
 
 export default {
     components: {
-        ContenedorSesiones,
         RouterLink,
-        ButtonBack
+        ButtonBack,
+        Asignacion
     },
     name: 'SesionesView',
     

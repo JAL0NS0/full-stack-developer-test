@@ -29,7 +29,7 @@ export default {
             valido: false
         }
     },
-    mounted() {
+    created() {
         this.loadData();     
     },
     methods: {

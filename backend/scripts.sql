@@ -11,7 +11,8 @@ CREATE TABLE sesiones(
     nombre VARCHAR(100),
     start_datetime TIMESTAMP,
     end_datetime TIMESTAMP,
-    cupo INTEGER
+    cupo INTEGER,
+    disponible INTEGER
 );
 
 CREATE TABLE asignaciones(
