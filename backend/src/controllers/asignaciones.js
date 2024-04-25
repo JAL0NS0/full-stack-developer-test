@@ -11,11 +11,11 @@ const getAsignacionById = async (req, res) =>{
     const id_estudiante = req.params.id_estudiante
     const id_sesion = req.params.id_sesion
     //Sin datos
-    if(id_estudiante===undefined || id_sesion===undefined){
+    if(!Number.isInteger(id_estudiante)  || !Number.isInteger(id_sesion)){
         return res.status(400).json({
             error: {
                 message: "No se pudo encontrar asignación",
-                details: "Los datos requeridos no fueron proporcionados en el cuerpo de la solicitud"
+                details: "Los datos requeridos no fueron proporcionado"
               }
         })
     }
@@ -69,7 +69,6 @@ const createAsignancion = async (req, res) =>{
     //Validar que no se repita
     //Existe Asignacion
     const existe_asignacion = await pool.query('SELECT * FROM asignaciones WHERE id_sesion=$1 AND id_estudiante=$2', [id_sesion, id_estudiante]);
-    console.log(existe_asignacion)
     if(existe_asignacion.rowCount != 0){
         return res.status(409).json({
             error: {
@@ -104,7 +103,9 @@ const createAsignancion = async (req, res) =>{
     }
 
     //Todo esta seguro para hacer la asignacion
-    await pool.query('UPDATE sesiones SET disponible = disponible+1 WHERE id=$1',[id_sesion])
+    //Quitar un cupo a la sesion
+    await pool.query('UPDATE sesiones SET disponible = disponible-1 WHERE id=$1',[id_sesion])
+    //Agregar asignacion
     await pool.query('INSERT INTO asignaciones (id_estudiante, id_sesion) VALUES ($1, $2);', [id_estudiante, id_sesion]);
     return res.json({
         message: "Asignacion Creada",
@@ -120,6 +121,7 @@ const createAsignancion = async (req, res) =>{
 const updateAsignacion = async (req, res) =>{
     const id_estudiante = req.params.id_estudiante
     const id_sesion = req.params.id_sesion
+
     return res.status(405).json({
         error: {
             message: "No se puede actualizar asignacion",
@@ -131,7 +133,22 @@ const updateAsignacion = async (req, res) =>{
 const deleteAsignacion = async (req, res) =>{
     const id_estudiante = req.params.id_estudiante;
     const id_sesion = req.params.id_sesion;
-    const response = await pool.query('DELETE FROM asignaciones WHERE id_estudiante=$1 AND id_sesion=$2;', [id_estudiante, id_sesion]);
+
+    //Existe Asignacion
+    const existe_asignacion = await pool.query('SELECT * FROM asignaciones WHERE id_sesion=$1 AND id_estudiante=$2', [id_sesion, id_estudiante]);
+    if(existe_asignacion.rowCount == 0){
+        return res.status(409).json({
+            error: {
+              message: "No se puede borrar la asignación",
+              details: "Error en los valores"
+            }
+          })
+    }
+    
+    //Devolver el cupo
+    await pool.query('DELETE FROM asignaciones WHERE id_estudiante=$1 AND id_sesion=$2;', [id_estudiante, id_sesion]);
+    //Eliminar asignacion
+    await pool.query('UPDATE sesiones SET disponible = disponible+1 WHERE id=$1',[id_sesion])
     res.json({
         message: `Asignacion de estudiante id:${id_estudiante} a la sesion id:${id_sesion} eliminada`
     })
