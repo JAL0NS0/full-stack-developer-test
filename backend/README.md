@@ -49,3 +49,4 @@ El proyecto backend se organiza en las siguientes carpetas:
 2. Configurar las variables de entorno en un archivo **.env**.
 3. Ejecutar los scripts de base de datos en PostgreSQL.
 4. Iniciar el servidor ejecutando el comando **npm start**.
+5. El servidor deberia correr en el Puerto 5000
